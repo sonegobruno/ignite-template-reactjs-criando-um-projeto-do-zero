@@ -19,6 +19,42 @@
     & + li {
       margin-top: 50px;
     }
+
+    strong {
+      font-size: 28px;
+      line-height: 33.89px;
+      color: var(--gray-100);
+    }
+
+    p {
+      margin-top: 8px;
+      font-size: 18px;
+      line-height: 21.78px;
+    }
+
+    > div {
+      margin-top: 25px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      div {
+        color: var(--gray-500);
+        svg {
+          color: var(--gray-500);
+          margin-right: 10.5px;
+        }
+      }
+    }
   }
 
+}
+
+.buttonMore {
+  background: transparent;
+  color: var(--pink-500);
+  border: 0;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 32px;
 }

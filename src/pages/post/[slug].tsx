@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 
 import { getPrismicClient } from '../../services/prismic';
 
@@ -26,10 +27,20 @@ interface PostProps {
   post: Post;
 }
 
-export default function Post() {
+export default function Post(): JSX.Element {
   // TODO
   return (
-    <h1>Teste</h1>
+    <>
+      <Head>
+        <title>Post | Ig.news</title>
+      </Head>
+      <header>
+        <img src="/images/logo.svg" alt="logo" />
+      </header>
+      <main>
+        <img src="/images/logo.svg" alt="logo" />
+      </main>
+    </>
   );
 }
 

@@ -1,11 +1,11 @@
 import { GetStaticProps } from 'next';
 
+import Head from 'next/head';
+import { FiCalendar, FiUser } from 'react-icons/fi';
 import { getPrismicClient } from '../services/prismic';
 
 import commonStyles from '../styles/common.module.scss';
 import styles from './home.module.scss';
-import Head from 'next/head';
-import { FiCalendar, FiUser } from 'react-icons/fi'
 
 interface Post {
   uid?: string;
@@ -26,63 +26,65 @@ interface HomeProps {
   postsPagination: PostPagination;
 }
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <>
-        <Head>
-          <title>Home | Ig.news</title>
-        </Head>
-        <main className={styles.container}>
-          <div className={styles.logo}>
-            <img src="/images/logo.svg" alt="logo"/>
-          </div>
-          <ul className={styles.posts}>
-            <li>
-              <strong>Como utilizar Hooks</strong>
-              <p>Pensando em sincronização</p>
+      <Head>
+        <title>Home | Ig.news</title>
+      </Head>
+      <main className={styles.container}>
+        <div className={styles.logo}>
+          <img src="/images/logo.svg" alt="logo" />
+        </div>
+        <ul className={styles.posts}>
+          <li>
+            <strong>Como utilizar Hooks</strong>
+            <p>Pensando em sincronização</p>
+            <div>
               <div>
-                <div>
-                  <FiCalendar />
-                  19 abr 2021
-                </div>
-                <div>
-                  <FiUser />
-                  Danilo Vieira
-                </div>
+                <FiCalendar />
+                19 abr 2021
               </div>
-            </li>
-            <li>
-              <strong>Como utilizar Hooks</strong>
-              <p>Pensando em sincronização</p>
               <div>
-                <div>
-                  <FiCalendar />
-                  19 abr 2021
-                </div>
-                <div>
-                  <FiUser />
-                  Danilo Vieira
-                </div>
+                <FiUser />
+                Danilo Vieira
               </div>
-            </li>
-            <li>
-              <strong>Como utilizar Hooks</strong>
-              <p>Pensando em sincronização</p>
+            </div>
+          </li>
+          <li>
+            <strong>Como utilizar Hooks</strong>
+            <p>Pensando em sincronização</p>
+            <div>
               <div>
-                <div>
-                  <FiCalendar />
-                  19 abr 2021
-                </div>
-                <div>
-                  <FiUser />
-                  Danilo Vieira
-                </div>
+                <FiCalendar />
+                19 abr 2021
               </div>
-            </li>
-          </ul>
-        </main>
+              <div>
+                <FiUser />
+                Danilo Vieira
+              </div>
+            </div>
+          </li>
+          <li>
+            <strong>Como utilizar Hooks</strong>
+            <p>Pensando em sincronização</p>
+            <div>
+              <div>
+                <FiCalendar />
+                19 abr 2021
+              </div>
+              <div>
+                <FiUser />
+                Danilo Vieira
+              </div>
+            </div>
+          </li>
+        </ul>
 
-
+        <button type="button" className={styles.buttonMore}>
+          Carregar mais posts
+        </button>
+      </main>
     </>
   );
 }
