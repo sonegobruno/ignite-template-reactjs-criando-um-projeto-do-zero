@@ -84,12 +84,13 @@ export default function Home({
 
     setPosts([...posts, ...newPosts]);
   }
-  console.log(posts);
+
   return (
     <>
       <Head>
         <title>Home | spacetraveling</title>
       </Head>
+
       <main className={commonStyles.container}>
         <Header />
 
@@ -97,8 +98,7 @@ export default function Home({
           {posts.map(post => (
             <Link href={`/post/${post.uid}`} key={post.uid}>
               <a className={styles.post}>
-                {/*
-                <strong>{post.data.title[0].text}</strong>
+                <strong>{post.data.title}</strong>
                 <p>{post.data.subtitle}</p>
                 <ul>
                   <li>
@@ -110,10 +110,10 @@ export default function Home({
                     {post.data.author}
                   </li>
                 </ul>
-              */}
               </a>
             </Link>
           ))}
+
           {nextPage && (
             <button type="button" onClick={handleNextPage}>
               Carregar mais posts
